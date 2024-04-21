@@ -1,5 +1,6 @@
 select USER_ID, PRODUCT_ID
-from ONLINE_SALE
-group by 1, 2
-having count(PRODUCT_ID) > 1
+from online_sale
+group by user_id, product_id
+having count(product_id) > 1
 order by 1, 2 desc;
+
