@@ -1,0 +1,22 @@
+select a.ID, 
+        count(b.PARENT_ID) as CHILD_COUNT
+from ECOLI_DATA as a
+left join ECOLI_DATA as b 
+on a.ID = b.PARENT_ID
+group by a.ID
+order by a.ID;
+
+
+/*
+SELECT
+    PARENT.ID,
+    COUNT(CHILD.ID) AS CHILD_COUNT
+FROM
+    ECOLI_DATA AS PARENT
+LEFT OUTER JOIN
+    ECOLI_DATA AS CHILD ON PARENT.ID = CHILD.PARENT_ID
+GROUP BY
+    PARENT.ID
+ORDER BY
+    PARENT.ID
+*/
