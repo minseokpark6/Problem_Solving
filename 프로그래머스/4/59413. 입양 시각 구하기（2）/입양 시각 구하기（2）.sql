@@ -4,8 +4,8 @@ from (select (ROW_NUMBER() OVER () - 1) as HOUR
       LIMIT 24) as 24HOURS_TABLE
       left join ANIMAL_OUTS as b
       on 24HOURS_TABLE.HOUR = HOUR(b.DATETIME)
-group by HOUR
-order by HOUR;
+group by 1
+order by 1;
 
 
 /*
