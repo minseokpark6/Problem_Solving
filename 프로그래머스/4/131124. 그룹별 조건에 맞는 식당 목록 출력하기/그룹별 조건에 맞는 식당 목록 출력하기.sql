@@ -7,5 +7,4 @@ where a.MEMBER_ID = (select MEMBER_ID
                      group by MEMBER_ID
                      order by count(REVIEW_TEXT) desc
                      limit 1)
-order by 3, 2;
-
+order by REVIEW_DATE, REVIEW_TEXT;
