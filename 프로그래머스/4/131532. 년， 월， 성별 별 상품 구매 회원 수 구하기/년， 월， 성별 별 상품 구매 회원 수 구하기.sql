@@ -4,4 +4,4 @@ join USER_INFO as i
 on o.user_id = i.user_id
 where gender is not null
 group by YEAR, MONTH, i.gender
-order by 1, 2, 3;
+order by year, month, gender;
