@@ -4,5 +4,4 @@ left join REST_REVIEW as r
 on i.REST_ID = r.REST_ID
 where i.ADDRESS like '서울%' and r.REVIEW_SCORE is not null
 group by REST_ID
-order by SCORE desc, FAVORITES desc;
-
+order by 6 desc, 4 desc;
