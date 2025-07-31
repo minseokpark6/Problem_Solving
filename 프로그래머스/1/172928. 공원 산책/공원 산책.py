@@ -2,6 +2,50 @@ def solution(park, routes):
     # 공원의 가로, 세로 길이 정의 
     w, h = len(park[0]), len(park)
 
+    # 방향 정보 정의 
+    move = {'E' : (0, 1), 
+            'W' : (0, -1),
+            'S' : (1, 0),
+            'N' : (-1, 0)}
+    
+    # 출발 위치 설정
+    for i in range(h):
+        for j in range(w):
+            if park[i][j] == 'S':
+                x, y = i, j
+
+
+    # 주어진 방향으로 이동 
+    for route in routes:
+        op, n = route.split()   # 주어진 명령의 방향 및 거리 정의
+        dx, dy = move[op]   # 방향 값 숫자로 환산 
+        nx, ny = x, y   # 현재 위치 설정 
+        flag = True     # 장애물, 공원의 범위를 벗어나는 경우 확인을 위한 bool
+        
+        # 한 칸씩 이동하면서 다음 두 가지를 먼저 확인
+        for _ in range(int(n)):
+            nx += dx
+            ny += dy
+            # 공원의 범위를 벗어나는 경우
+            if not ((0 <= nx < h) and 0 <= ny < w):
+                flag = False 
+                break
+            # 가는 길에 장애물이 있는 경우
+            if park[nx][ny] == "X":
+                flag = False
+                break
+        
+        # 이동 경로에 문제가 없다면 이동 
+        if flag:
+            x, y = nx, ny
+    
+    return [x, y]
+
+'''
+def solution(park, routes):
+    # 공원의 가로, 세로 길이 정의 
+    w, h = len(park[0]), len(park)
+
     # 출발 위치 설정
     result = []
     for idx, i in enumerate(park):
@@ -57,3 +101,4 @@ def solution(park, routes):
             result[0] -= n
 
     return result
+'''
