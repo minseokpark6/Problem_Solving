@@ -1,9 +1,11 @@
 def solution(s):
-    answer = ''
-    if len(s) % 2 == 0:
-        idx = len(s) // 2
-        answer = s[idx-1] + s[idx]
+    idx = len(s)//2
+    # 홀수인 경우
+    if len(s) % 2 != 0:
+        answer = s[idx]
+    # 짝수인 경우
     else:
-        idx = len(s) // 2
-        answer += s[idx]
+        answer = s[idx-1:idx+1]
+    
+    # 출력 
     return answer
