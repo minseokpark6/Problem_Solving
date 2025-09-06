@@ -1,3 +1,23 @@
+def solution(n):
+    # 변수 정의 
+    cnt = 0
+    
+    # 콜라츠 추측 횟수 구하기
+    while n != 1:
+        if n % 2 == 0:
+            n /= 2
+        else:
+            n = (n*3)+1
+        cnt += 1
+    
+        # 500번이 되었는데 1이 되지 않은 경우
+        if cnt == 500 and n != 1:
+            return -1
+            break
+        
+    return cnt
+
+''' 이전 코드
 def solution(num):
     answer = 0
     
@@ -24,5 +44,4 @@ def solution(num):
             return -1
             break
     
-        
-    
+'''
