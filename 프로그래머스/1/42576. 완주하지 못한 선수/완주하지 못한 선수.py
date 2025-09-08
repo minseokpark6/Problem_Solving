@@ -1,4 +1,25 @@
 def solution(participant, completion):
+    # 빈 딕셔너리 생성 
+    dic = {}
+    
+    # 딕셔너리에 참가자 추가 
+    for part in participant:
+        dic[part] = dic.get(part, 0) + 1
+        
+    # 완주자 제거 
+    for comple in completion:
+        dic[comple] -= 1
+    
+    # 출력 
+    for name, count in dic.items():
+        if count == 1:
+            return name
+    
+
+
+
+''' 기존 통과 코드 
+def solution(participant, completion):
     # 빈 딕셔너리 생성
     dic = {}
     
@@ -15,7 +36,7 @@ def solution(participant, completion):
     
     # 남아있는 사람 출력
     return ''.join([name for name in dic if dic[name] == 1])
-
+'''
 
 """
 # 위 코드와 아래 코드의 시간 복잡도의 차이 
