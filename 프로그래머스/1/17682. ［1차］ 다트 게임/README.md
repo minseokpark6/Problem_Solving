@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 10.5 MB, 시간: 0.04 ms
+메모리: 9.29 MB, 시간: 0.04 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 12월 17일 18:56:09
+2025년 09월 09일 20:41:39
 
 ### 문제 설명
 
@@ -98,11 +98,20 @@
 <td>5</td>
 <td>1<sup>2</sup> * (-1) * 2 + 2<sup>1</sup> * 2 + 3<sup>1</sup></td>
 </tr>
+<tr>
+<td>6</td>
+<td><code>1T2D3D#</code></td>
+<td>-4</td>
+<td>1<sup>3</sup> + 2<sup>2</sup> + 3<sup>2</sup> * (-1)</td>
+</tr>
+<tr>
+<td>7</td>
+<td><code>1D2S3T*</code></td>
+<td>59</td>
+<td>1<sup>2</sup> + 2<sup>1</sup> * 2 + 3<sup>3</sup> * 2</td>
+</tr>
 </tbody>
       </table>
-<p>| 6 | <code>1T2D3D#</code> | -4 | 1<sup>3</sup> + 2<sup>2</sup> + 3<sup>2</sup> * (-1)|<br>
-| 7 | <code>1D2S3T*</code> | 59 | 1<sup>2</sup> + 2<sup>1</sup> * 2 + 3<sup>3</sup> * 2 |</p>
-
 <p><a href="http://tech.kakao.com/2017/09/27/kakao-blind-recruitment-round-1/" target="_blank" rel="noopener">해설 보러가기</a></p>
 
 
