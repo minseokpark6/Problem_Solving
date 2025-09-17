@@ -1,15 +1,17 @@
 def solution(s):
+    # 변수 지정
     result = []
     words = s.split(" ")
     
+    # 문자열 변경
     for word in words:
-        w = ""
-        for idx, s in enumerate(word):
+        temp = ""
+        for idx, w in enumerate(word):
             if idx % 2 == 0:
-                w += s.upper()
+                temp += w.upper()
             else:
-                w += s.lower()
-        result.append(w)
-        
-    answer = " ".join(result)
-    return answer
+                temp += w.lower()
+        result.append(temp)
+    
+    # 출력
+    return " ".join(result)
