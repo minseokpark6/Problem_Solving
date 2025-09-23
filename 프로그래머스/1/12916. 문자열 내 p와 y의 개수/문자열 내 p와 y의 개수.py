@@ -1,4 +1,13 @@
 def solution(s):
+    # 변수 정의
+    p_cnt = s.lower().count('p')
+    y_cnt = s.lower().count('y')
+    
+    # 출력 
+    return True if p_cnt == y_cnt else False
+
+'''
+def solution(s):
     p_count = s.lower().count('p')
     y_count = s.lower().count('y')
     
@@ -8,5 +17,5 @@ def solution(s):
         return True
     else:
         return False
-    
+'''
  
