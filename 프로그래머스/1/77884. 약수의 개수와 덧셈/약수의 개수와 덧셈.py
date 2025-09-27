@@ -1,4 +1,28 @@
 def solution(left, right):
+    # 변수 정의 
+    total = 0
+    # 제곱수 판별 
+    for num in range(left, right+1):
+        if int(num**0.5) ** 2 == num:
+            total -= num 
+        else:
+            total += num 
+    # 출력
+    return total 
+
+'''
+(1) 모든 약수의 개수를 구할 필요가 없음 
+-> 약수의 개수가 홀수인지 짝수인지만 판별하면 가능 
+-> 약수의 개수가 홀수인 경우는 제곱수, 나머지는 모두 짝수 
+
+(2) 불필요한 리스트 사용 X 
+-> number, div 등의 리스트 사용 시 메모리 증가 
+
+(3) enumerate를 사용하여 중첩 계산 풀필요 
+'''
+
+''' 이전 코드
+def solution(left, right):
     # 약수의 개수 담을 리스트 생성 
     div = []
     # left - right까지의 모든 수 리스트 
@@ -22,3 +46,4 @@ def solution(left, right):
     
     # 출력        
     return sum(number)
+'''
