@@ -1,6 +1,24 @@
 def solution(s):
     stack = []
     for i in s:
+        if i == "(":
+            stack.append(i)
+        else:  # i == ")"
+            if not stack:  # 스택이 비어 있는데 닫는 괄호가 나오면 실패
+                return False
+            stack.pop()
+    return not stack  # 비어있으면 True, 남아있으면 False
+
+'''
+# 불필요한 부분 삭제 
+- if not stack >> else에 포함 가능 
+- 출력 시 코드 간소화 
+
+
+# 기존 성공 코드 
+def solution(s):
+    stack = []
+    for i in s:
         # 스택 리스트가 비어있는 경우, 추가
         if not stack:
             stack.append(i)
@@ -20,10 +38,8 @@ def solution(s):
         
     
     
+## 오답 
 
-    
-    
-""" 
 >> 반례: "(()))("
 
 def solution(s):
@@ -46,4 +62,4 @@ def solution(s):
 
     # 출력
     return answer
-"""
+'''
