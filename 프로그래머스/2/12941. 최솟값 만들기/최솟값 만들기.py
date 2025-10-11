@@ -1,8 +1,22 @@
+def solution(A, B):
+    return sum(i*j for i, j in zip(sorted(A), sorted(B, reverse=True)))
+
+''' 
+(1) A를 오름차순 정렬, B를 내림차순 정렬하여 누적합 값을 최소화
+
+(2) 리스트 컴프리헨션 vs 제너레이터 표현식 
+- 불필요한 리스트 메모리 사용 X 
+
+
+## 이전 정답 코드
 def solution(A,B):
     # 리스트 컴프리헨션으로 변경
     answer = sum([i*j for i, j in zip(sorted(A), sorted(B, reverse = True))])
     # 출력
     return answer
+
+'''
+
 
 """ 
 >> 시간 초과 
