@@ -1,3 +1,23 @@
+def solution(s): 
+    # 변수 지정 
+    cnt, zero_cnt = 0, 0 
+
+    # 이진변환 
+    while s != "1":
+        # 제거한 0의 개수와 횟수 더하기
+        zero_cnt += s.count("0")
+        cnt += 1
+        
+        # s에서 0 제거
+        s = format(s.count("1"), "b")
+        
+    # 출력 
+    return [cnt, zero_cnt]
+
+
+'''
+## 이전 코드
+
 def solution(s):
     # 변수 및 리스트 설정
     answer = []
@@ -22,3 +42,4 @@ def solution(s):
     
     # 출력
     return answer
+'''
