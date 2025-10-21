@@ -1,4 +1,17 @@
 def solution(n):
+    # n을 이진수로 변환 후 1의 개수 카운트 
+    cnt = bin(n).count('1')
+
+    # 다음 큰 숫자 찾기 
+    while True:
+        n += 1
+        if bin(n).count('1') == cnt:
+            return n
+        
+"""
+
+## 기존 통과 코드
+def solution(n):
     # 자연수 n을 2진수로 변환 후 1의 개수 카운트
     b1 = format(n, 'b')
     b1_count = b1.count("1")
@@ -16,8 +29,6 @@ def solution(n):
 
 
 
-
-"""
 1. 
 파이썬 내장함수 bin(), oct(), hex() >> 2진수, 8진수, 16진수로 변환 
 
