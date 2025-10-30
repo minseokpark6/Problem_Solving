@@ -1,3 +1,11 @@
+from itertools import combinations
+
+def solution(numbers):
+    return sorted(set(sum(c) for c in combinations(numbers, 2)))
+
+'''
+## 이전 통과 코드 
+
 def solution(numbers):
     # 변수 지정
     answer = []
@@ -10,3 +18,5 @@ def solution(numbers):
     
     # 중복 제거 후 반환
     return sorted(set(answer))
+
+'''
