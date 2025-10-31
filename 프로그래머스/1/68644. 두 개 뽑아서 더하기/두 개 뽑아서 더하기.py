@@ -1,9 +1,17 @@
+def solution(numbers):
+    return sorted(
+        set(numbers[idx1]+numbers[idx2] for idx1 in range(len(numbers)) for idx2 in range(idx1+1, len(numbers)))
+        )
+
+'''
+## combinations 메소드 활용 코드 
+
 from itertools import combinations
 
 def solution(numbers):
     return sorted(set(sum(c) for c in combinations(numbers, 2)))
 
-'''
+
 ## 이전 통과 코드 
 
 def solution(numbers):
