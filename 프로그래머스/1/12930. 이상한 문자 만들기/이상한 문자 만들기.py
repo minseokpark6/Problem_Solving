@@ -1,7 +1,6 @@
 def solution(s):
     return " ".join(
-       "".join(w.upper() if idx%2==0 else w.lower() 
-               for idx, w in enumerate(word)) 
+       "".join(ch.upper() if idx%2==0 else ch.lower() for idx, ch in enumerate(word)) 
        for word in s.split(" ")
     )
 
