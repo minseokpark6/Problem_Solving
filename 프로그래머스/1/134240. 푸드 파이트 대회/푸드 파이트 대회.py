@@ -1,4 +1,15 @@
 def solution(food):
+    # 왼 쪽에서 먹는 선수의 음식
+    left = [str(i) for i in range(1, len(food)) for _ in range(food[i] // 2)]
+    
+    # 전체 음식 출력
+    return "".join(left + ["0"] + left[::-1])
+
+'''
+
+## 이전 코드 
+
+def solution(food):
     # 변수 지정
     temp = ''
     
@@ -12,3 +23,4 @@ def solution(food):
         
     # 출력    
     return answer
+'''
