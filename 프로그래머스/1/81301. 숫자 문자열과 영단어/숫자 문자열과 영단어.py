@@ -1,36 +1,29 @@
 def solution(s):
-    # 리스트 및 딕셔너리 정의
-    word_str = ["zero", "one", "two", "three", 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    num_str = [str(i) for i in range(10)] 
-    word_dic = {w:n for w, n in zip(word_str, num_str)}
+    # 변수 정의 
+    word_list = ["zero", "one", "two", "three", 'four', 'five', 'six', 'seven', 'eight', 'nine']
     
-    # 주어진 단어 숫자로 변경
-    for w, n in word_dic.items():
-        s = s.replace(w, n)
-        
-    # 출력
+    # 단어를 숫자로 변경 
+    for i, w in enumerate(word_list):
+        s = s.replace(w, str(i))
+    
+    # 출력 
     return int(s)
 
+'''
+(1) 불필요한 리스트 및 딕셔너리 삭제 
 
-"""
-# 정답 
+
+## 기존 통과 코드 
 
 def solution(s):
-    # 리스트 및 딕셔너리 정의
-    word_str = ["zero", "one", "two", "three", 'four', 'five', 'six', 'seven', 'eight', 'nine']
-    num_str = [str(i) for i in range(10)] 
-    word_dic = {w:n for w, n in zip(word_str, num_str)}
-    
-    # 주어진 단어 숫자로 변경
-    answer, temp = "", ""
-    for i in s:
-        if i in num_str:
-            answer += i
-        else:
-            temp += i
-            if temp in word_str:
-                answer += word_dic[temp]
-                temp = ""
+    # 리스트 및 딕셔너리 정의 
+    word_list = ["zero", "one", "two", "three", 'four', 'five', 'six', 'seven', 'eight', 'nine'] 
+    num_list = [str(i) for i in range(10)]
+    dic = {w:n for w, n in zip(word_list, num_list)}
+
+    # 단어를 숫자로 변경 
+    for w, n in dic.items():
+        s = s.replace(w, n)
     # 출력
-    return int(answer)
-"""
+    return int(s)
+'''
