@@ -1,4 +1,11 @@
 def solution(array, commands):
+    return [sorted(array[i-1:j])[k-1] for i, j, k in commands]
+
+
+'''
+## 이전 통과 코드
+
+def solution(array, commands):
     # 변수 정의 
     answer = []
     
@@ -9,3 +16,4 @@ def solution(array, commands):
     
     # 출력
     return answer
+'''
