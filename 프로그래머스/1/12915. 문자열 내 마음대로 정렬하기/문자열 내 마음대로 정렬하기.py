@@ -1,18 +1,14 @@
 def solution(strings, n):
-    answer = sorted(strings, key = lambda x : (x[n], x))
-    return answer
+    return sorted(strings, key= lambda x : (x[n], x))
 
 '''
-(1) sorted()
-strings를 sorted 한다 
+### sorted()
 
-(2) key 
-key를 기준으로 sorted 해라. 
+(1) key = 
+- key를 기준으로 정렬
 
-(3) lambda 
-lambda 함수를 사용해서 
-x[n]를 기준으로 하고, 
-x[n]가 같을 경우, 그냥 x를 기준으로 해라 
--> 첫 번째 문자를 기준으로 sorted하겠다.
+(2) lambda x : (x[n], x)
+- x[n]을 1순위로 놓고 정렬하고, 
+- x[n]이 같은 경우, 2순위는 x로 정렬 
 
 '''
