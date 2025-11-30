@@ -1,55 +1,51 @@
 def solution(n, arr1, arr2):
-    # 배열 이진수 변환
-    temp1 = [format(i, 'b') for i in arr1]
-    temp2 = [format(i, 'b') for i in arr2]
-    
-    # 이진수 변환 후 자리수 n으로 설정
-    ar1 = ['0'*(n-len(i)) + i if len(i) < n else i for i in temp1]
-    ar2 = ['0'*(n-len(i)) + i if len(i) < n else i for i in temp2]
+    # 출력
+    return [format(a|b, 'b').zfill(n).replace('1', '#').replace('0', ' ') for a, b in zip(arr1, arr2)]
 
-    # 빈 리스트 생성
-    answer = []
+'''
+
+## 리스트 컴프리헨션 이전 가독성 버전 코드 
+
+def solution(n, arr1, arr2):
+    # 변수 정의 
+    result = []
     
     # 암호 해독
-    for a, b in zip(ar1, ar2):
-        temp = ""
+    for a, b in zip(arr1, arr2):
+        row = format(a|b, 'b').zfill(n) # 비트 or 연산 후 이진수 자리수 채우기
+        row = row.replace('1', '#').replace('0', ' ')
+        result.append(row)
+    
+    # 출력
+    return result
+    
+
+(1) 비트 연산 + zfill을 활용해 이진수 + 이진수 자리수 해결 
+(2) replace 활용
+
+
+## 이전 통과 코드 
+def solution(n, arr1, arr2):
+    # 배열 이진수 변환 
+    m1 = [format(i, 'b') for i in arr1]
+    m2 = [format(i, 'b') for i in arr2]
+    
+    # 이진수 자리수 맞추기 
+    map1 = ['0'*(n-len(i))+i if len(i)<n else i for i in m1]
+    map2 = ['0'*(n-len(i))+i if len(i)<n else i for i in m2]
+    
+    # 암호 해독
+    answer = []
+    for a, b in zip(map1, map2):
+        temp = []
         for i, j in zip(a, b):
             if i == '1' or j == '1':
-                temp += "#"
+                temp.append("#")
             else:
-                temp += " "
-        answer.append(temp)
-        
-    # 출력
-    return answer
-
-
-
-"""
-# 넘파이 호출 안됨
-
-import numpy as np
-def solution(n, arr1, arr2):
-    # 배열 이진수로 변환
-    ar1 = np.array([int(format(i, 'b')) for i in arr1])
-    ar2 = np.array([int(format(i, 'b')) for i in arr2])
+                temp.append(" ")
+        answer.append("".join(temp))
     
-    # 두 배열의 합 >> 지도 겹치기
-    arr = [str(i) for i in (ar1 + ar2)]
-    
-    # 비밀지도 암호 해독
-    for i in arr:
-        # 이진수의 자리수가 다를 경우 맞춰주기
-        if len(i) < n:
-            i = '0'*(n-len(i)) + i
-        temp = ""
-        for num in i:
-            if num == '1' or num == '2':
-                temp += "#"
-            else:
-                temp += " "
-        answer.append(temp)
-        
     # 출력
-    return answer
-"""
+    return answer  
+    
+    '''
