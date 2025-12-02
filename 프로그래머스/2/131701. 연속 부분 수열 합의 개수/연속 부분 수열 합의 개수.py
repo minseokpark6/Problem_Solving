@@ -1,3 +1,30 @@
+## 누적합 활용 버전 코드 
+
+def solution(elements):
+    # 변수 정의 
+    n = len(elements)
+    arr = elements * 2
+    result = set()
+    
+    # 1. 누적합 리스트 정의
+    prefix = [0] * (2 * n + 1)
+    for i in range(1, 2*n + 1):
+        prefix[i] = prefix[i-1] + arr[i-1]
+        
+    # 2. 연속 부분 수열의 합 정의 
+    for length in range(1, n+1):
+        for start in range(n):
+            result.add(prefix[start+length] - prefix[start])
+    
+    # 3. 합의 개수 출력
+    return len(result)
+
+        
+
+'''
+
+## 슬라이싱 윈도우 활용 ver.
+
 def solution(elements):
     # 변수 정의 
     n = len(elements)
@@ -17,9 +44,10 @@ def solution(elements):
     
     # 출력
     return len(result)
-        
 
-'''
+
+## 개선 부분 
+
 (1) 기존 통과 코드 => O(n³)
 - for 문 => O(n)
 - 2차 for문 => O(n)
