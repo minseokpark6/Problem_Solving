@@ -1,4 +1,13 @@
 def solution(n, left, right):
+    return [max(i%n, i//n) + 1 for i in range(left, right+1)]
+
+'''
+## 개선한 부분 
+(1) 기존 코드가 해당 문제에서는 최적의 성능을 가지고 있었기 때문에 리스트 컴프리헨션으로만 변경
+
+## 이전 통과 코드 
+
+def solution(n, left, right):
     # 빈 리스트 생성
     answer = []
     
@@ -11,8 +20,8 @@ def solution(n, left, right):
     # 출력 
     return answer
 
+## 좌표값 구하기 
 
-"""
 #1
 n = 3
 [[1,2,3], [2,2,3], [3,3,3]]
@@ -27,31 +36,4 @@ n = 3
 n=4
 [[1,2,3,4], [2,2,3,4], [3,3,3,4], [4,4,4,4]]
 
-"""
-
-
-"""
-# 시간 초과 실패 
-
-def solution(n, left, right):
-    # 빈 리스트 생성
-    result = []
-    
-    # 2차원 배열 생성
-    for i in range(n):
-        # 임시 리스트 생성
-        temp = []
-        for j in range(i, n):
-            temp.append(j+1)
-            if temp.index(j+1) != j:
-                temp *= (j+1)
-                
-        # 리스트에 임시 리스트 추가
-        result.append(temp)
-        
-    # 1차원화 
-    answer = [num for num_list in result for num in num_list]
-
-    # 출력 
-    return answer[left:right+1]
-"""
+'''
