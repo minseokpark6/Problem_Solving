@@ -1,39 +1,34 @@
 def solution(citations):
-    # 변수 지정
+    # 정렬
+    citations.sort(reverse=True)
+    
+    # H-Index 찾기
+    for i, c in enumerate(citations):
+        if c < i+1:
+            return i
+    
+    # 그 이외의 경우
+    return len(citations)
+
+'''
+## 개선점 
+(1) 정렬과 인덱스를 이용하여 시간 복잡도 개선
+- 최대 O(n²) -> O(n log n)
+
+
+## 이전 통과 코드 
+
+def solution(citations):
+    # 최초 h 값 정의 
     h = len(citations)
     
-    # H-index 찾기
+    # H-Index 찾기 
     while True:
-        if sum([n >= h for n in citations]) >= h:
+        if sum(n >= h for n in citations) >= h:
             break
         else:
             h -= 1
-
+    
     # 출력
     return h
-
-
-'''
-# 시간 초과 실패
-
-def solution(citations):
-    # 변수 지정 
-    idx = len(citations) // 2
-    # 내림차순 정렬
-    citations.sort(reverse = True)
-    
-    # H-index 찾기
-    while True:
-        if len(citations[:idx+1]) == citations[idx]:
-            answer = citations[idx]
-            break
-        elif len(citations[:idx+1]) > citations[idx]:
-            idx -= 1
-            
-        elif len(citations[:idx+1]) < citations[idx]:
-            idx += 1
-
-    # 출력
-    return answer
-
 '''
