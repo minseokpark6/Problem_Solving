@@ -1,4 +1,23 @@
 from collections import Counter
+from functools import reduce
+
+def solution(clothes):
+    # 가지고 있는 옷의 개수 카운트
+    cnt = Counter(kind for _, kind in clothes).values()
+
+    # 조합 경우의 수 출력
+    return reduce(lambda x,y : x*(y+1), cnt, 1) - 1
+
+'''
+## Reduce
+- 여러 값을 하나의 값을 누적할 때 사용 
+- reduce(function, iterable, initial_value)
+
+
+
+## 개선 코드 1
+
+from collections import Counter
 
 def solution(clothes):
     # 가지고 있는 옷의 개수 카운트
@@ -12,7 +31,6 @@ def solution(clothes):
     # 출력
     return cnt - 1
 
-'''
 
 ## 이전 통과 코드 
 
