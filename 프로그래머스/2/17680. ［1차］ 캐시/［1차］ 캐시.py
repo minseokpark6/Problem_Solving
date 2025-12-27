@@ -1,4 +1,36 @@
 def solution(cacheSize, cities):
+    # cacheSize가 0인 경우 
+    if cacheSize == 0:
+        return len(cities) * 5
+    
+    # 변수 정의
+    cache = []
+    time = 0
+    
+    # 실행시간 구하기 
+    for city in map(str.lower, cities):
+        if city in cache:
+            cache.remove(city)
+            time += 1
+        else:
+            time += 5
+            if len(cache) == cacheSize:
+                cache.pop(0)
+        
+        cache.append(city)
+    
+    # 출력
+    return time
+
+'''
+## 개선점
+(1) 불필요한 분기(if not memory) 제거
+(2) 흩어져 있는 Least Recently Used 캐시 정책 코드 한 번에 처리하는 구조로 변경
+
+
+## 기존 통과 코드 
+
+def solution(cacheSize, cities):
     # 변수 설정
     answer = 0
     cache = []
@@ -46,16 +78,9 @@ def solution(cacheSize, cities):
     return answer
 
 
-"""
-# 7번, 17번 반례 케이스 
-
- 0, ["Jeju", "Jeju"]
- 
-"""
 
 
-"""
-# 페이지 교체 알고리즘 
+## 페이지 교체 알고리즘 
 
 FIFO : 페이지가 주기억장치에 적재된 시간을 기준으로 교체될 페이지를 선정하는 기법
 
@@ -72,4 +97,6 @@ LFU : 가장 적은 횟수를 참조하는 페이지를 교체
 LRU : 가장 오랫동안 참조되지 않은 페이지를 교체
 
 단점 : 프로세스가 주기억장치에 접근할 때마다 참조된 페이지에 대한 시간을 기록해야함. 큰 오버헤드가 발생
-"""
+
+
+'''
