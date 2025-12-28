@@ -1,3 +1,34 @@
+# 정렬 ver 코드
+def solution(phone_book):
+    # 정렬 -> 같은 접두어를 가진 번호가 바로 다음에 오도록 
+    arr = sorted(phone_book)
+    
+    # 접두어 여부 확인 
+    for idx in range(len(arr)-1):
+        if arr[idx+1].startswith(arr[idx]):
+            return False
+    
+    # 출력
+    return True
+
+'''
+## 해시 ver 코드
+def solution(phone_book):
+    # 해시 자료 구조로 변경 
+    numbers = set(phone_book)
+    
+    # 접두어 검색
+    for number in numbers:
+        prefix = ''
+        for c in number:
+            prefix += c
+            if prefix in numbers and prefix != number:
+                return False
+    # 출력
+    return True
+    
+
+## 기존 통과 코드 
 def solution(phone_book):
     # 변수 정의
     answer = True
@@ -12,3 +43,4 @@ def solution(phone_book):
             break
     # 출력
     return answer
+'''
