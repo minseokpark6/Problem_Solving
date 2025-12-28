@@ -1,3 +1,45 @@
+from collections import OrderedDict
+
+def solution(cacheSize, cities):
+    # cacheSize가 0인 경우 
+    if cacheSize == 0:
+        return len(cities) * 5
+    
+    # 변수 정의
+    cache = OrderedDict()
+    time = 0
+    
+    # 실행시간 구하기 
+    for city in map(str.lower, cities):
+        if city in cache:
+            cache.move_to_end(city)
+            time += 1
+        else:
+            time += 5
+            if len(cache) == cacheSize:
+                cache.popitem(last=False)   # 맨 앞 요소 제거(last=False)
+        
+        cache[city] = True
+    
+    # 출력
+    return time
+
+'''
+## OrderedDict
+- 딕셔너리의 순서를 명시적으로 관리하는 자료구조
+- deque vs OrderedDict
+    - deque는 이중 연결 리스트
+    - 양 끝 삽입 및 삭제 => O(1)
+    - 하지만 중간 탐색, 중간 삭제는 => O(n)
+    
+    - OrderedDict은 해시 테이블(dict) + 이중 연결 리스트 
+    - 검색, 삭제, 순서이동 -> O(n)
+
+    - 크기가 커질수록 유의미한 성능 차이가 발생
+
+
+## 메소드를 사용하지 않은 버전
+
 def solution(cacheSize, cities):
     # cacheSize가 0인 경우 
     if cacheSize == 0:
@@ -22,7 +64,7 @@ def solution(cacheSize, cities):
     # 출력
     return time
 
-'''
+
 ## 개선점
 (1) 불필요한 분기(if not memory) 제거
 (2) 흩어져 있는 Least Recently Used 캐시 정책 코드 한 번에 처리하는 구조로 변경
