@@ -1,11 +1,11 @@
 # 정렬 ver 코드
 def solution(phone_book):
     # 정렬 -> 같은 접두어를 가진 번호가 바로 다음에 오도록 
-    arr = sorted(phone_book)
+    sorted_s = sorted(phone_book)
     
     # 접두어 여부 확인 
-    for idx in range(len(arr)-1):
-        if arr[idx+1].startswith(arr[idx]):
+    for idx in range(len(sorted_s)-1):
+        if sorted_s[idx+1].startswith(sorted_s[idx]):
             return False
     
     # 출력
