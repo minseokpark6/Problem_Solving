@@ -1,3 +1,3 @@
 def solution(n):
     # 출력
-    return sum([int(i) for i in str(n)])
+    return sum(int(s) for s in str(n))
