@@ -1,4 +1,14 @@
 def solution(k, m, score):
+    # score 정렬
+    score.sort(reverse = True)
+    
+    # 최대 이익 출력
+    return sum(score[i]*m for i in range(m-1, len(score), m))
+
+
+'''
+## 기존 통과 코드
+def solution(k, m, score):
     # 변수 설정 
     answer = 0
 
@@ -13,7 +23,8 @@ def solution(k, m, score):
     # 출력
     return answer
 
-'''
+
+
 >> 기존 코드 대비 개선점
 1) min() 호출로 인한 O(m) -> O(1)로 최적화 
 2) 슬라이싱 제거 
