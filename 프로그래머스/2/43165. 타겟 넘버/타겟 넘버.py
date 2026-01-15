@@ -1,3 +1,31 @@
+## 반복문 DFS ver.
+
+def solution(numbers, target):
+    answer = 0
+    stack = [(0, 0)]    # (cnt, current_sum)
+    
+    # 깊이 우선 탐색
+    while stack:
+        cnt, current_sum = stack.pop()
+        
+        # 모든 숫자를 다 사용했을 때 
+        if cnt == len(numbers):
+            if current_sum == target:
+                answer += 1
+            continue
+        
+        # + 선택
+        stack.append((cnt+1, current_sum + numbers[cnt]))
+        # - 선택
+        stack.append((cnt+1, current_sum - numbers[cnt]))
+    
+    # 출력
+    return answer
+
+
+'''
+## 재귀 DFS ver.
+
 def solution(numbers, target):
     def dfs(cnt, current_sum):
         # 정지 조건
@@ -15,8 +43,6 @@ def solution(numbers, target):
     # 탐색 시작 -> 출력
     return dfs(0, 0)
 
-
-'''
 
 ## 이전 통과 코드 
 
