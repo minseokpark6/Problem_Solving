@@ -1,4 +1,16 @@
 from itertools import combinations
+import math
+
+def solution(nums):
+    return sum(
+        1 for c in combinations(nums, 3) 
+        if all(sum(c) % i for i in range(2, int(math.sqrt(sum(c))) +1))
+    )
+
+'''
+## 개선 코드 
+
+from itertools import combinations
 import math 
 
 def is_prime(n):
@@ -24,7 +36,6 @@ def solution(nums):
     # 출력
     return cnt
 
-'''
 ## 개선점
 (1) 소수 판별 속도 개선
 - 불필요한 숫자까지 모두 돌아가지 않게 소수 판별 범위 축소
