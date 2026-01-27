@@ -1,3 +1,41 @@
+def solution(word):
+    # 변수 정의
+    letters = ['A', 'E', 'I', 'O', 'U']     # 사전 순서로 정렬
+    cnt = 0
+    answer = 0
+    
+    # 완전 탐색 함수 정의
+    def dfs(current):
+        nonlocal cnt, answer    # 상위 함수에서 변수 가져오기
+        
+        if current:
+            cnt += 1
+            if current == word:
+                answer = cnt
+                # 답을 찾은 경우 해당 회차 함수 종료
+                return 
+        
+        # 길이가 5인 경우 탐색 종료
+        if len(current) == 5:
+            return 
+        
+        for l in letters:
+            dfs(current + l)
+    
+    # 재귀 함수 시작
+    dfs("")
+
+    # 출력
+    return answer 
+
+'''
+## 개선점
+(1) 재귀를 이용한 완전탐색(dfs) 방식으로 변경 
+- 메모리 사용량이 적고, 
+- 조건에 따라 가지치는 방식의 변경이 자유롭게 가능
+
+
+## 이전 코드 
 from itertools import product 
 
 def solution(word):
@@ -7,8 +45,6 @@ def solution(word):
     
     # 출력 
     return word_list.index(word) + 1
-
-'''
 
 
 ## 순열 / 조합
@@ -35,3 +71,4 @@ def solution(word):
 
 
 '''
+    
