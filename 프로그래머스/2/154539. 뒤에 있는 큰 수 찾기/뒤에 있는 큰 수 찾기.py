@@ -1,18 +1,17 @@
 def solution(numbers):
-    # 리스트 생성
+    # 변수 정의 
     answer = [-1] * len(numbers)
-    stack = []    # 인덱스 저장용
+    stack = []  # 인덱스 저장용 
     
-    # 뒷 큰 수 찾기
-    for idx, num in enumerate(numbers):
-        # 저장되어 있는 인덱스를 돌면서 뒤에 더 큰 수가 나올 경우, stack에서 인덱스를 제거하며 answer에 저장
-        while stack and numbers[stack[-1]] < num:
-            answer[stack.pop()] = num
-    
-        # 다음 반복문에서의 크기 비교를 위해 stack에 인덱스 추가
+    # 뒷 큰 수 찾기 
+    for idx, n in enumerate(numbers):
+        # 저장되어 있는 인덱스를 돌면서 뒷 큰 수가 나올 경우 찾기 
+        while stack and (numbers[stack[-1]] < n):
+            answer[stack.pop()] = n 
+        
+        # 다음 크기 비교를 위한 인덱스 추가 
         stack.append(idx)
-
-
+    
     # 출력
     return answer
 
