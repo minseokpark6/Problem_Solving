@@ -1,3 +1,2 @@
 def solution(s):
-    answer = int(s)
-    return answer
+    return int(s)
