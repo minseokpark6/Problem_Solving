@@ -1,14 +1,20 @@
-def solution(arr):
-    # 배열의 길이가 1인 경우 
-    if len(arr) == 1:
-        return [-1]
-    # 그 외의 경우 
-    m = min(arr)
-    # 출력
-    return [i for i in arr if i != m]
+def solution(arr): 
+    # 변수 정의
+    m = min(arr) 
+    # 출력 
+    return [i for i in arr if i != m] if len(arr) != 1 else [-1]
 
 '''
-기존 코드 
+## 기존 코드 
+def solution(arr):
+    if len(arr) == 1:
+        return [-1]
+    m = min(arr)
+    return [x for x in arr if x != m]
+
+
+
+## 기존 코드 
 >> remove를 사용할 경우 원본 자체를 바꿔버림으로 비추천 
 
 def solution(arr):
