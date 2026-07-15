@@ -1,3 +1,9 @@
+import math 
+
+def solution(n):
+    return 1 if math.isqrt(n)**2 == n else 2
+    
+'''
 def solution(n):
     li = []
     for i in range(1, 1001):
@@ -7,3 +13,4 @@ def solution(n):
         return 1
     else:
         return 2
+'''
