@@ -1,4 +1,10 @@
 def solution(number, n, m):
+    return 1 if (number%n==0) and (number%m==0) else 0
+
+
+'''
+def solution(number, n, m):
     if number % n == 0 and number % m == 0 :
         return 1
     return 0
+'''
