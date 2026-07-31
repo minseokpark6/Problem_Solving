@@ -1,4 +1,17 @@
 def solution(hp):
+    # 변수 정의
+    attack = [5, 3, 1]
+    cnt = 0
+    # 사냥감의 체력에 맞는 최소한의 병력 구하기
+    for i in attack:
+        cnt += (hp//i)
+        hp %= i
+
+        if hp == 0:
+            return cnt                  
+
+'''
+def solution(hp):
     answer = 0
     # 장군 개미 수
     j = hp // 5
@@ -20,3 +33,4 @@ def solution(hp):
     answer += i    
     
     return answer
+'''
