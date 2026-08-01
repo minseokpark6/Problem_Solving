@@ -1,10 +1,10 @@
 # [level 0] 최댓값 만들기 (2) - 120862 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120862#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120862) 
 
 ### 성능 요약
 
-메모리: 9.95 MB, 시간: 0.58 ms
+메모리: 11.6 MB, 시간: 0.00 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 14일 12:56:33
+2026년 08월 01일 15:04:58
 
 ### 문제 설명
 
