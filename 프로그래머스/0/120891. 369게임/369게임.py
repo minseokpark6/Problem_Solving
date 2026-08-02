@@ -1,4 +1,13 @@
 def solution(order):
+    # 변수 정의
+    clap = ['3', '6', '9']
+    
+    # 출력
+    return sum(1 for i in str(order) if i in clap)
+
+
+'''
+def solution(order):
     answer = 0
     order = str(order)
 
@@ -9,3 +18,4 @@ def solution(order):
     n9 = order.count('9')
     answer += n9
     return answer
+'''
