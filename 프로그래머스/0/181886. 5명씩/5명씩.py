@@ -1,4 +1,9 @@
 def solution(names):
+    return [n for idx, n in enumerate(names) if idx%5==0]
+    
+    
+'''
+def solution(names):
     answer = []
     # 나뉘는 그룹 수 지정
     if len(names) % 5 == 0:
@@ -9,3 +14,4 @@ def solution(names):
     for i in range(n):
         answer.append(names[5 * i])
     return answer
+'''
