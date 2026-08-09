@@ -1,4 +1,10 @@
 def solution(my_strings, parts):
+    return "".join(
+        my_strings[i][p[0]: p[1]+1] for i, p in enumerate(parts)
+    )
+
+'''
+def solution(my_strings, parts):
     result = []
     for idx, part in enumerate(parts):
         s, e = part[0], part[1]
@@ -6,3 +12,4 @@ def solution(my_strings, parts):
         result.append(my_str)
     answer = "".join(result)
     return answer
+'''
