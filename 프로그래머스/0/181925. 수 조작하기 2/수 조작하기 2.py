@@ -1,4 +1,19 @@
 def solution(numLog):
+    # 문자열 값 정의 
+    dic = {
+        1 : "w",
+        -1 : "s",
+        10 : "d",
+        -10 : "a"
+    }
+    
+    # 출력
+    return "".join(
+    dic[curr-prev] for prev, curr in zip(numLog, numLog[1:])
+    )
+
+'''
+def solution(numLog):
     temp = []
     for i in range(len(numLog) - 1):
         a = numLog[i+1] - numLog[i]
@@ -12,3 +27,4 @@ def solution(numLog):
             temp.append('a')
     answer = "".join(temp)         
     return answer
+'''
