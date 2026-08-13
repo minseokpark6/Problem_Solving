@@ -1,4 +1,8 @@
 def solution(numbers, direction):
+    return numbers[1:] + [numbers[0]] if direction == "left" else [numbers[-1]] + numbers[:-1]
+    
+'''
+def solution(numbers, direction):
     if direction == "left":
         l1 = numbers[0]
         numbers.remove(l1)
@@ -9,3 +13,4 @@ def solution(numbers, direction):
         numbers.remove(r1)
         numbers.insert(0, r1)
         return numbers
+'''
