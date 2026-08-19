@@ -1,4 +1,8 @@
 def solution(a, d, included):
+    return sum(a+(d*i) for i in range(len(included)) if included[i])
+
+'''
+def solution(a, d, included):
     answer = 0
     result = []
     # 길이가 n인 등차수열 result 생성
@@ -11,3 +15,4 @@ def solution(a, d, included):
             answer += result[i]
     # 출력
     return answer
+'''
