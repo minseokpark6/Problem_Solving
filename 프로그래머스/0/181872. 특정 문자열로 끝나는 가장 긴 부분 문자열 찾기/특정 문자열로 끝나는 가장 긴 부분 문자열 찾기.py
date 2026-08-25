@@ -1,4 +1,18 @@
 def solution(myString, pat):
+    # 변수 정의
+    l = len(pat)
+
+    # 가장 마지막 pat 인덱스 찾기 
+    for i in range(len(myString)-l+1):
+        if myString[i:i+l] == pat:
+            idx = i
+
+    # 출력
+    return myString[:idx+l]
+
+
+'''
+def solution(myString, pat):
     # 빈 문자열 생성
     answer = ''
     # 문자열 인덱스 찾기 (find: 왼쪽부터 인덱스, rfind: 오른쪽부터 인덱스)
@@ -18,3 +32,5 @@ def solution(myString, pat):
         answer = answer + myString[a:a+len(pat)]
 
     return answer
+
+'''
