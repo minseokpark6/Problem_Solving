@@ -1,7 +1,8 @@
 def solution(arr, queries):
-    for query in queries:
-        i, j = query[0], query[1]
-        a, b = arr[i], arr[j]
-        arr[i] = b
-        arr[j] = a
+    # 순서대로 배열 값 변경 
+    for q in queries:
+        i, j = q[0], q[1]
+        arr[i], arr[j] = arr[j], arr[i]
+    
+    # 출력
     return arr
