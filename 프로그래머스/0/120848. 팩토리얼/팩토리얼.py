@@ -1,4 +1,19 @@
 def solution(n):
+    # 변수 정의 
+    factorial = 1
+    i = 1
+    
+    # 조건에 만족하는 경우 찾기
+    while factorial <= n:
+        i += 1
+        factorial *= i
+    
+    # 출력 
+    return i - 1
+
+            
+'''
+def solution(n):
     answer = 0
     while True:
         answer += 1
@@ -15,4 +30,6 @@ def solution(n):
             return answer - 1
             break
         
+    
+'''
     
