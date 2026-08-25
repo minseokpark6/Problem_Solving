@@ -1,3 +1,13 @@
+def solution(emergency):
+    # 응급도 우선 순위 확인 
+    priority = {i:idx+1 for idx, i in enumerate(sorted(emergency.copy(), reverse = True))}
+    
+    # 출력
+    return [priority[e] for e in emergency]
+    
+
+
+'''
 from copy import deepcopy
 def solution(emergency):
     # 정답 받을 리스트 생성
@@ -16,3 +26,4 @@ def solution(emergency):
         answer[origin_idx] = rank
 
     return answer
+'''
