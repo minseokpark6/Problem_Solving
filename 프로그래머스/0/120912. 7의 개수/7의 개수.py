@@ -1,4 +1,8 @@
 def solution(array):
+    return sum(str(i).count("7") for i in array)
+
+'''
+def solution(array):
     answer = 0
     array = [str(num) for num in array]
     for num in array:
@@ -6,3 +10,4 @@ def solution(array):
             if i == '7':
                 answer += 1
     return answer
+'''
