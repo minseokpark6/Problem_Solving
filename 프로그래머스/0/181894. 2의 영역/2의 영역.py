@@ -1,4 +1,13 @@
 def solution(arr):
+    # 변수 정의
+    idx_arr = [idx for idx, n in enumerate(arr) if n == 2]
+    
+    # 출력
+    return arr[idx_arr[0]:idx_arr[-1]+1] if len(idx_arr) >= 2 else [2] if len(idx_arr) == 1 else [-1]
+
+
+'''
+def solution(arr):
     answer = []
     
     # 인덱스 담기
@@ -18,3 +27,4 @@ def solution(arr):
         
     # 출력
     return answer
+'''
