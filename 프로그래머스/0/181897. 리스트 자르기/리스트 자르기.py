@@ -1,4 +1,13 @@
 def solution(n, slicer, num_list):
+    # 변수 정의 
+    a, b, c = slicer[0], slicer[1], slicer[2]
+    dic = {1: num_list[0:b+1], 2:num_list[a:], 3:num_list[a:b+1], 4:num_list[a:b+1][::c]}
+    
+    # 출력
+    return dic[n]
+
+'''
+def solution(n, slicer, num_list):
     a, b, c = slicer[0], slicer[1], slicer[2]
     if n == 1:
         answer = num_list[0:b+1]
@@ -9,3 +18,4 @@ def solution(n, slicer, num_list):
     else:
         answer = num_list[a:b+1][::c]
     return answer
+'''
