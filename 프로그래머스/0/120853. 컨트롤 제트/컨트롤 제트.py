@@ -1,4 +1,13 @@
 def solution(s):
+    # 변수 정의 
+    arr = s.split()
+    
+    # 출력
+    return sum(int(n) if n != 'Z' else -(int(arr[idx-1]))  for idx, n in enumerate(arr))
+
+
+'''
+def solution(s):
     answer = 0
     # 공백을 기준으로 문자열 분리 후 리스트에 저장
     temp = s.split(" ")
@@ -14,3 +23,4 @@ def solution(s):
     for num in nums:
         answer += num
     return answer
+'''
