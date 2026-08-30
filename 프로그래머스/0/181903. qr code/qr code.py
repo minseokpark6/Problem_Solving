@@ -1,6 +1,2 @@
 def solution(q, r, code):
-    answer = ''
-    for i, c in enumerate(code):
-        if i % q == r:
-            answer += c
-    return answer
+    return "".join(c for idx, c in enumerate(code) if idx%q==r)
