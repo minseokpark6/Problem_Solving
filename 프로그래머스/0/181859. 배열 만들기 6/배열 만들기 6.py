@@ -1,4 +1,28 @@
 def solution(arr):
+    # 변수 정의 
+    stk = []
+    i = 0 
+    
+    # 새로운 배열 만들기 
+    while i < len(arr):
+        if stk:
+            if stk[-1] == arr[i]:
+                stk.pop()
+            elif stk[-1] != arr[i]:
+                stk.append(arr[i])
+        else:
+            stk.append(arr[i])
+        
+        i += 1
+    
+    # 출력
+    return stk if stk else [-1]
+                
+
+    
+
+'''
+def solution(arr):
     answer = []
     i = 0
     while i < len(arr):
@@ -15,3 +39,4 @@ def solution(arr):
         return [-1]
     else:
         return answer
+'''
