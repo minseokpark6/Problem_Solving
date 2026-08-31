@@ -1,4 +1,13 @@
 def solution(numbers, k):
+    # 변수 정의
+    result = [numbers[idx%len(numbers)] for idx in range(0, len(numbers)*k, 2)]
+    
+    # 출력
+    return result[k-1]
+    
+
+'''
+def solution(numbers, k):
     # 원형을 가장한 리스트 생성
     if len(numbers) < 2*k:
         numbers = numbers * k
@@ -7,3 +16,4 @@ def solution(numbers, k):
     # k번째 공을 던진 친구 번호 출력
     answer = numbers[k-1][0]    
     return answer
+'''
