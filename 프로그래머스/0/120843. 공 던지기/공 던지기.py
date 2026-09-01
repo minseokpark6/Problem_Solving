@@ -1,12 +1,17 @@
 def solution(numbers, k):
+    return numbers[(2 * (k-1)) % len(numbers)]
+    
+
+'''
+## 풀이 코드 2
+def solution(numbers, k):
     # 변수 정의
     result = [numbers[idx%len(numbers)] for idx in range(0, len(numbers)*k, 2)]
     
     # 출력
     return result[k-1]
-    
 
-'''
+## 풀이 코드 1
 def solution(numbers, k):
     # 원형을 가장한 리스트 생성
     if len(numbers) < 2*k:
