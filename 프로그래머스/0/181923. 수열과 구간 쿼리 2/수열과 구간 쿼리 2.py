@@ -1,4 +1,24 @@
 def solution(arr, queries):
+    # 변수 정의
+    result = []
+
+    # 각 쿼리에서 가장 작은 arr[i] 찾기
+    for q in queries:
+        s, e, k = q[0], q[1], q[2]
+
+        # k보다 큰 arr[i]값 temp에 담기
+        temp = sorted(n for n in arr[s:e+1] if n>k)
+
+        # temp 리스트에서 가장 작은 arr[i]값 추가
+        result.append(
+            temp[0] if temp else -1
+        )
+
+    # 출력
+    return result
+
+'''
+def solution(arr, queries):
     answer = []
     # s, e, k 값 정의
     for q in queries:
@@ -17,3 +37,4 @@ def solution(arr, queries):
         answer.append(result)
     
     return answer
+'''
