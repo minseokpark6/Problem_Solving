@@ -1,12 +1,35 @@
 def solution(sides):
-    max_sides = max(sides)
-    min_sides = min(sides)
-    sum_sides = sides[0] + sides[1]
-    # 나머지 한 변이 제일 긴 경우 
-    temp_1 = list(range(max_sides+1, sum_sides))
-    # sides에 제일 긴 변이 있는 경우
-    temp_2 = list(range(max_sides - min_sides + 1, max_sides + 1))
+    return 2*min(sides) - 1
     
-    # answer 출력
-    answer = len(list(set(temp_1 + temp_2)))
-    return answer
+    
+
+
+'''
+## 삼각형 한 변의 개수 
+(1) range1 => range(max_side-min_side+1, max_side+1)
+- max_side - (max_side-min_side+1) +1 
+- (min_side)개
+
+(2) range2 => range(max_side+1, sum_sides)
+- (max_side+min_side) - (max_side+1)
+ - (min_side - 1) 개
+ 
+ Total: (2*min_side -1)개
+
+
+
+## 이전 풀이 코드
+def solution(sides):
+    # 변수 정의
+    max_side, min_side = max(sides), min(sides)
+    sum_sides = sum(sides)
+    
+    # 삼각형 조건에 맞는 변 구하기
+    # 1. max_side가 가장 긴 변인 경우 
+    arr_1 = list(range(max_side-min_side+1, max_side+1))
+    # 2. 그 외의 변이 가장 긴 경우
+    arr_2 = list(range(max_side+1, sum_sides))
+    
+    # 정수의 개수 출력
+    return len(set(arr_1 + arr_2))
+'''
