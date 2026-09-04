@@ -1,10 +1,10 @@
 # [level 0] 정사각형으로 만들기 - 181830 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181830#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181830) 
 
 ### 성능 요약
 
-메모리: 11 MB, 시간: 0.16 ms
+메모리: 11.7 MB, 시간: 0.09 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 10월 30일 10:49:23
+2026년 09월 04일 11:59:18
 
 ### 문제 설명
 
